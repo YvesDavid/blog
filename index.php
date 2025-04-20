@@ -39,3 +39,13 @@ if (isset($_GET['action']) && $_GET['action'] !== '') {
        require('templates/error.php');
 }
 
+/** try {
+*  if (isset($_GET['action']) && $_GET['action'] === 'post' && isset($_GET['id'])) {
+*     post($_GET['id']);
+* } else {
+*    homepage(); // par défaut
+* } 
+* } catch (Exception $e) {
+*   echo 'Erreur : ' . $e->getMessage();
+* }
+*/

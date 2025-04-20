@@ -10,16 +10,16 @@
       <div class="news">
          <h3> 
          <!-- short echo tag = On retire la balise + le echo afin de rendre le code plus propre ( <php  echo htmlspecialchars($post['title']); ?> ) -->
-            <?= htmlspecialchars($post['title']); ?>
-            <em>le <?php echo $post['french_creation_date']; ?></em>
+            <?= htmlspecialchars($post->title); ?>
+            <em>le <?= $post->french_creation_date; ?></em>
          </h3>
          <p>
-         <?php
-         // On affiche le contenu du billet
-                echo    nl2br ( htmlspecialchars( $post['content']));
-         ?>
+         
+         <!-- On affiche le contenu du billet -->
+                <?=   nl2br ( htmlspecialchars( $post->content)); ?>
+         
          <br />
-         <em><a href="index.php?action=post&id=<?= urlencode($post['id']) ?>">Voir les commentaires</a></em>
+         <em><a href="index.php?action=post&id=<?= urlencode($post->id) ?>">Voir les commentaires</a></em>
          </p>
       </div>
       <?php
